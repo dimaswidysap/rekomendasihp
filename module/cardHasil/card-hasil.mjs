@@ -30,7 +30,7 @@ function cardHasil(conTarget, data) {
 
   Object.assign(conPrice.style, {
     position: "absolute",
-    width: "100%",
+    width: "90%",
     height: "2rem",
     backgroundColor: "green",
     bottom: "0",

@@ -9,6 +9,9 @@
   </head>
   <body>
     <div class="container">
+      <section class="con-btn-close">
+        <a href="index.html"></a>
+      </section>
       <h1>🔍 Sistem Pakar Rekomendasi HP</h1>
       <p>Jawab beberapa pertanyaan untuk mendapatkan rekomendasi HP terbaik!</p>
 
@@ -38,6 +41,28 @@
           </select>
         </div>
 
+        <section>
+          <ul class="list-penjelasan">
+            <li>
+              Untuk pioritas urutan kesatu sudah termasuk ram besar, penyimpanan
+              besar, layar amoled, chipset kencang.
+            </li>
+            <li>
+              Untuk pioritas urutan kedua sudah termasuk kamera bagus dikelas
+              harganya, dan penyimpanan besar.
+            </li>
+            <li>
+              Untuk pioritas urutan ketiga sudah termasuk ram besar, penyimpanan
+              besar,kamera bagus dan chipset kencang untuk multitasking.
+            </li>
+            <li>
+              Untuk pioritas urutan keempat kami menyarankan hp dengan layar
+              ips, karena untuk aktivitas diluar ruangan layar ips sangan cocok
+              daripada layar amolde
+            </li>
+          </ul>
+        </section>
+
         <div class="question-group">
           <label for="baterai">3. Seberapa penting baterai tahan lama?</label>
           <select id="baterai" name="baterai" required>
@@ -46,14 +71,17 @@
             <option value="tidak">Tidak terlalu</option>
           </select>
         </div>
+        <section>
+          <ul class="list-penjelasan">
+            <li>
+              Untuk kireteria baterai tahan lama diatas atau sama dengan 5000mAh
+              (untuk 2025)
+            </li>
+          </ul>
+        </section>
 
         <button type="submit">Dapatkan Rekomendasi</button>
       </form>
-
-      <!-- <div id="hasil-rekomendasi" class="hasil-box">
-        <h2>🎉 Hasil Rekomendasi</h2>
-        <p id="rekomendasi-text">Silakan isi formulir di atas.</p>
-      </div> -->
     </div>
 
     <section class="container-hasil"></section>

@@ -22,10 +22,22 @@ const rules = [
     desc: "gaming-midrange",
   },
   {
+    id: "R2V2",
+    premises: { prioritas: "game", anggaran: "menengah", baterai: "tidak" },
+    goal: "HP Gaming Mid-Range Ignore Battery",
+    desc: "gaming-midrange-ignore-battery",
+  },
+  {
     id: "R3",
     premises: { prioritas: "game", anggaran: "rendah", baterai: "ya" },
     goal: "HP Gaming Entry-Level",
     desc: "gaming-entrylevel",
+  },
+  {
+    id: "R3V2",
+    premises: { prioritas: "game", anggaran: "rendah", baterai: "tidak" },
+    goal: "HP Gaming Entry-Level Ignore Battery",
+    desc: "gaming-entrylevel-ignore-battery",
   },
   {
     id: "R4",
@@ -34,10 +46,22 @@ const rules = [
     desc: "flagship-kamera",
   },
   {
+    id: "R4V2",
+    premises: { prioritas: "foto", anggaran: "tinggi", baterai: "tidak" },
+    goal: "HP Flagship Kamera Terbaik Ignore Battery",
+    desc: "flagship-kamera-ignore-battery",
+  },
+  {
     id: "R5",
     premises: { prioritas: "foto", anggaran: "menengah", baterai: "ya" },
     goal: "HP Kamera Mid-Range Terbaik",
     desc: "midrange-kamera",
+  },
+  {
+    id: "R5V2",
+    premises: { prioritas: "foto", anggaran: "menengah", baterai: "tidak" },
+    goal: "HP Kamera Mid-Range Terbaik Ignore Battery",
+    desc: "midrange-kamera-ignore-battery",
   },
   {
     id: "R6",
@@ -45,8 +69,60 @@ const rules = [
     goal: "HP Kamera Entry-level Terbaik",
     desc: "entrylevel-kamera",
   },
-
-  // Tambahkan lebih banyak aturan di sini
+  {
+    id: "R6V2",
+    premises: { prioritas: "foto", anggaran: "rendah", baterai: "tidak" },
+    goal: "HP Kamera Entry-level Terbaik Ignore Battery",
+    desc: "entrylevel-kamera-ignore-battery",
+  },
+  {
+    id: "R7",
+    premises: { prioritas: "bisnis", anggaran: "tinggi", baterai: "ya" },
+    goal: "HP Bisnis Fgaship",
+    desc: "hp-bisnis-flagship",
+  },
+  {
+    id: "R7V2",
+    premises: { prioritas: "bisnis", anggaran: "tinggi", baterai: "tidak" },
+    goal: "HP Bisnis Fgaship Ignore Battery",
+    desc: "hp-bisnis-flagship-ignore-battery",
+  },
+  {
+    id: "R8",
+    premises: { prioritas: "bisnis", anggaran: "menengah", baterai: "ya" },
+    goal: "HP Bisnis Mid-Range",
+    desc: "hp-bisnis-midrange",
+  },
+  {
+    id: "R8V2",
+    premises: { prioritas: "bisnis", anggaran: "menengah", baterai: "tidak" },
+    goal: "HP Bisnis Mid-Range Ignore Battery",
+    desc: "hp-bisnis-midrange-ignore-battery",
+  },
+  {
+    id: "R9",
+    premises: { prioritas: "bisnis", anggaran: "rendah", baterai: "ya" },
+    goal: "HP Bisnis Entry Level",
+    desc: "hp-bisnis-entrylevel",
+  },
+  {
+    id: "R9V2",
+    premises: { prioritas: "bisnis", anggaran: "rendah", baterai: "tidak" },
+    goal: "HP Bisnis Entry Level Ignore battery",
+    desc: "hp-bisnis-entrylevel-ignore-battery",
+  },
+  {
+    id: "R9",
+    premises: { prioritas: "outdoor", anggaran: "rendah", baterai: "ya" },
+    goal: "HP outdoor Entry Level",
+    desc: "hp-outdoor-entrylevel",
+  },
+  {
+    id: "R9V2",
+    premises: { prioritas: "outdoor", anggaran: "rendah", baterai: "tidak" },
+    goal: "HP outdoor Entry Level Ignore Battery",
+    desc: "hp-outdoor-entrylevel-ignore-battery",
+  },
 ];
 
 export { rules };

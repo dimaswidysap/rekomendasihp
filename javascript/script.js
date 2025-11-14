@@ -62,27 +62,230 @@ const conTarget = document.querySelector(".container-hasil");
 document
   .getElementById("expertSystemForm")
   .addEventListener("submit", function (event) {
-    event.preventDefault(); // Mencegah form submit default
+    event.preventDefault();
 
     const form = event.target;
 
-    // Ambil data dari input pengguna (menjadi 'Fakta' awal)
     const userFacts = {
       anggaran: form.anggaran.value,
       prioritas: form.prioritas.value,
       baterai: form.baterai.value,
     };
 
-    console.log(userFacts);
-
     const resultRule = backwardChaining(userFacts);
-    // const resultElement = document.getElementById("rekomendasi-text");
 
-    console.log(resultRule);
+    // console.log(resultRule);
+
+    conTarget.innerHTML = "";
+
+    console.log(resultRule.desc);
 
     switch (true) {
+      case resultRule.desc === "hp-outdoor-entrylevel-ignore-battery":
+        {
+          const find = data.filter((hp) => {
+            const isScreenOk = hp.screen === "ips";
+
+            return isScreenOk;
+          });
+
+          find.forEach((items) => cardHasil(conTarget, items));
+        }
+        break;
+      case resultRule.desc === "hp-outdoor-entrylevel":
+        {
+          const find = data.filter((hp) => {
+            const isScreenOk = hp.screen === "ips";
+
+            return isScreenOk;
+          });
+
+          find.forEach((items) => cardHasil(conTarget, items));
+        }
+        break;
+      case resultRule.desc === "hp-bisnis-entrylevel-ignore-battery":
+        {
+          const bisnisMidrange = data.filter((hp) => {
+            const find = hp.name.includes("poco x6 pro 5g");
+            return find;
+          });
+
+          bisnisMidrange.forEach((items) => cardHasil(conTarget, items));
+        }
+        break;
+      case resultRule.desc === "hp-bisnis-entrylevel":
+        {
+          const bisnisMidrange = data.filter((hp) => {
+            const find = hp.name.includes("poco x6 pro 5g");
+            return find;
+          });
+
+          bisnisMidrange.forEach((items) => cardHasil(conTarget, items));
+        }
+        break;
+      case resultRule.desc === "hp-bisnis-midrange-ignore-battery":
+        {
+          const bisnisMidrange = data.filter((hp) => {
+            const find = hp.name.includes("vivo v40 5g");
+            return find;
+          });
+
+          bisnisMidrange.forEach((items) => cardHasil(conTarget, items));
+        }
+        break;
+      case resultRule.desc === "hp-bisnis-midrange":
+        {
+          const bisnisMidrange = data.filter((hp) => {
+            const find = hp.name.includes("vivo v40 5g");
+            return find;
+          });
+
+          bisnisMidrange.forEach((items) => cardHasil(conTarget, items));
+        }
+        break;
+      case resultRule.desc === "hp-bisnis-flagship-ignore-battery":
+        {
+          const bisnisFlagship = data.filter((hp) => {
+            const find =
+              hp.name.includes("samsung s24 ultra") ||
+              hp.name.includes("iphone 15");
+            return find;
+          });
+
+          bisnisFlagship.forEach((items) => cardHasil(conTarget, items));
+        }
+        break;
+      case resultRule.desc === "hp-bisnis-flagship":
+        {
+          const bisnisFlagship = data.filter((hp) => {
+            const find = hp.name.includes("samsung s24 ultra");
+            return find;
+          });
+
+          bisnisFlagship.forEach((items) => cardHasil(conTarget, items));
+        }
+        break;
+      case resultRule.desc === "entrylevel-kamera-ignore-battery":
+        {
+          const entrylevelKamera = data.filter((hp) => {
+            const find =
+              hp.name.includes("redmi note 13 pro 5g") ||
+              hp.name.includes("infinix note 40 4g");
+            return find;
+          });
+
+          entrylevelKamera.forEach((items) => cardHasil(conTarget, items));
+        }
+        break;
+      case resultRule.desc === "entrylevel-kamera":
+        {
+          const entrylevelKamera = data.filter((hp) => {
+            const find =
+              hp.name.includes("redmi note 13 pro 5g") ||
+              hp.name.includes("infinix note 40 4g");
+            return find;
+          });
+
+          entrylevelKamera.forEach((items) => cardHasil(conTarget, items));
+        }
+
+        break;
+      case resultRule.desc === "midrange-kamera-ignore-battery":
+        {
+          const midrangeKamera = data.filter((hp) => {
+            const find = hp.name.includes("vivo v40 5g");
+
+            return find;
+          });
+
+          midrangeKamera.forEach((items) => cardHasil(conTarget, items));
+        }
+        break;
+      case resultRule.desc === "midrange-kamera":
+        {
+          const midrangeKamera = data.filter((hp) => {
+            const find = hp.name.includes("vivo v40 5g");
+
+            return find;
+          });
+
+          midrangeKamera.forEach((items) => cardHasil(conTarget, items));
+        }
+        break;
+      case resultRule.desc === "flagship-kamera-ignore-battery":
+        {
+          const flagshipKamera = data.filter((hp) => {
+            const find =
+              hp.name.includes("samsung s24 ultra") ||
+              hp.name.includes("iphone 15");
+
+            return find;
+          });
+
+          flagshipKamera.forEach((items) => cardHasil(conTarget, items));
+        }
+        break;
+      case resultRule.desc === "flagship-kamera":
+        {
+          const flagshipKamera = data.filter((hp) => {
+            const find = hp.name.includes("samsung s24 ultra");
+            return find;
+          });
+
+          flagshipKamera.forEach((items) => cardHasil(conTarget, items));
+        }
+        break;
+      case resultRule.desc === "gaming-entrylevel-ignore-battery":
+        const hpGamingEntryLevelIgnoreBattery = data.filter((hp) => {
+          const isPriceOk = hp.price <= 5000000;
+          const isChipsetOk = prosesorGaming.some((items) =>
+            hp.chipset.includes(items)
+          );
+          return isPriceOk && isChipsetOk;
+        });
+
+        hpGamingEntryLevelIgnoreBattery.forEach((el) =>
+          cardHasil(conTarget, el)
+        );
+        break;
+      case resultRule.desc === "gaming-entrylevel":
+        const hpGamingEntryLevel = data.filter((hp) => {
+          const isPriceOk = hp.price <= 5000000;
+          const isChipsetOk = prosesorGaming.some((items) =>
+            hp.chipset.includes(items)
+          );
+          return isPriceOk && isChipsetOk;
+        });
+
+        hpGamingEntryLevel.forEach((el) => cardHasil(conTarget, el));
+        break;
+      case resultRule.desc === "gaming-midrange":
+        const hpGamingMidrange = data.filter((hp) => {
+          const isPriceOk = hp.price >= 5000000 && hp.price <= 8000000;
+          const isChipsetOk = prosesorGaming.some((items) =>
+            hp.chipset.includes(items)
+          );
+          return isPriceOk && isChipsetOk;
+        });
+
+        hpGamingMidrange.forEach((items) => cardHasil(conTarget, items));
+
+        break;
+      case resultRule.desc === "gaming-midrange-ignore-battery":
+        const hpGamingMidrangeIgnoreBattery = data.filter((hp) => {
+          const isPriceOk = hp.price >= 5000000 && hp.price <= 8000000;
+          const isChipsetOk = prosesorGaming.some((items) =>
+            hp.chipset.includes(items)
+          );
+          return isPriceOk && isChipsetOk;
+        });
+
+        hpGamingMidrangeIgnoreBattery.forEach((items) =>
+          cardHasil(conTarget, items)
+        );
+
+        break;
       case resultRule.desc === "gaming-flagship":
-        conTarget.innerHTML = "";
         const flagshipGaming = data.filter((hp) => {
           const isChipsetOk = prosesorGaming.some((items) =>
             hp.chipset.includes(items)
@@ -94,12 +297,8 @@ document
         });
         flagshipGaming.forEach((data) => cardHasil(conTarget, data));
 
-        console.log(flagshipGaming);
-
-        console.log("hp-gaming-baterai-badak");
         break;
       case resultRule.desc === "gaming-flagship-Ignory-Battery":
-        conTarget.innerHTML = "";
         const flagshipGamingIgnoreBattery = data.filter((hp) => {
           const isChipsetOk = prosesorGaming.some((items) =>
             hp.chipset.includes(items)
