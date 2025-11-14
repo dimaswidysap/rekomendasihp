@@ -3,13 +3,18 @@ function cardHasil(conTarget, data) {
   const div1 = document.createElement("div");
   const div2 = document.createElement("div");
   const conImg = document.createElement("div");
+  const conPrice = document.createElement("div");
   const img = document.createElement("img");
   const header = document.createElement("header");
+  const moreSpec = document.createElement("section");
+  const moreSpecHeader = document.createElement("header");
+  const moreSpecTeks = document.createElement("p");
 
   conTarget.appendChild(container);
   container.appendChild(div1);
   container.appendChild(div2);
   div1.appendChild(conImg);
+  div1.appendChild(conPrice);
   conImg.appendChild(img);
   div2.appendChild(header);
 
@@ -22,6 +27,22 @@ function cardHasil(conTarget, data) {
   img.setAttribute("src", `asset/img-hp/${data.foto}`);
 
   header.textContent = data.name;
+
+  Object.assign(conPrice.style, {
+    position: "absolute",
+    width: "100%",
+    height: "2rem",
+    backgroundColor: "green",
+    bottom: "0",
+    marginBottom: "5%",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    borderRadius: "10px",
+    color: "white",
+  });
+
+  conPrice.textContent = `Rp ${data.price}`;
 
   for (let i = 0; i < 5; i++) {
     const section = document.createElement("section");
@@ -78,6 +99,25 @@ function cardHasil(conTarget, data) {
         break;
     }
   }
+
+  div2.appendChild(moreSpec);
+  moreSpec.appendChild(moreSpecHeader);
+  moreSpec.appendChild(moreSpecTeks);
+  moreSpec.classList.add("tess");
+
+  moreSpecHeader.textContent = "More Spec";
+
+  Object.assign(moreSpecHeader.style, {
+    width: "100%",
+    padding: "0.3rem 0 0 0.4rem 0.8rem",
+  });
+
+  Object.assign(moreSpecTeks.style, {
+    padding: "0 0.3rem 3rem 0.8rem",
+    fontFamily: "Monospace",
+  });
+
+  moreSpecTeks.textContent = `Speaker ${data.speaker}, Network ${data.network}, Battery ${data.battery}mAh`;
 }
 
 export { cardHasil };

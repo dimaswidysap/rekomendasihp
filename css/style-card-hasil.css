@@ -18,6 +18,7 @@ img {
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
 }
 .safe div {
   height: 95%;
@@ -29,8 +30,12 @@ img {
   /* background-color: blueviolet; */
   flex: 1;
   display: flex;
+  height: 100%;
+  /* width: 60rem; */
   flex-direction: column;
   gap: 0.3rem;
+  overflow: auto;
+  /* background-color: blueviolet; */
 }
 .iojk header {
   width: 100%;
@@ -64,4 +69,11 @@ img {
     width: 100% !important;
     height: 40% !important;
   }
+}
+
+.tess {
+  /* height: 25rem; */
+  max-width: 100%;
+  /* background-color: blue; */
+  flex-shrink: 0;
 }
