@@ -2,35 +2,41 @@ import { rules, data, cardHasil, createHeader } from "./../module/module.mjs";
 
 // console.log(data);
 
-function backwardChaining(facts) {
-  // ... (Kode untuk mendapatkan possibleGoals)
-  const possibleGoals = [...new Set(rules.map((rule) => rule.goal))];
+function penalaranMundur(faktaPengguna) {
+  // njukok kabel goal soko rulebase
+  const daftarTujuan = [...new Set(rules.map((aturan) => aturan.goal))];
 
-  for (const goal of possibleGoals) {
-    // Cek setiap aturan untuk mencapai 'goal' ini
-    for (const rule of rules) {
-      if (rule.goal === goal) {
-        let allPremisesMet = true;
+  // looping goal
+  for (const tujuan of daftarTujuan) {
+    // golek aturan sing podo karo tujuan
+    for (const aturan of rules) {
+      // jika goal di rulebase sama dengan tujuan
+      if (aturan.goal === tujuan) {
+        // dianggep kabeh bener kek
+        let premisCocokSemua = true;
 
-        // Cek semua Premis (JIKA) di aturan ini
-        // Iterasi ini akan secara otomatis memeriksa `battery` jika ada di rule.premises
-        for (const key in rule.premises) {
-          const requiredValue = rule.premises[key];
-          const userFactValue = facts[key];
+        // Cek semua premis pada aturan
+        for (const namaPremis in aturan.premises) {
+          //
+          const nilaiYangDibutuhkan = aturan.premises[namaPremis];
+          const nilaiDariPengguna = faktaPengguna[namaPremis];
 
-          // Jika fakta pengguna tidak cocok dengan premis yang dibutuhkan
-          if (userFactValue !== requiredValue) {
-            allPremisesMet = false;
+          // Jika ada premis yang tidak sesuai fakta → aturan gagal
+          if (nilaiDariPengguna !== nilaiYangDibutuhkan) {
+            premisCocokSemua = false;
             break;
           }
         }
 
-        if (allPremisesMet) {
-          return rule; // BERHASIL: Mengembalikan R1V2 jika semua premis (prioritas, anggaran, battery) cocok.
+        // Jika semua premis sesuai, maka aturan ini adalah hasilnya
+        if (premisCocokSemua) {
+          return aturan;
         }
       }
     }
   }
+
+  // Jika tidak ada aturan yang cocok
   return null;
 }
 
@@ -72,13 +78,15 @@ document
       baterai: form.baterai.value,
     };
 
-    const resultRule = backwardChaining(userFacts);
+    // console.log(userFacts);
+
+    const resultRule = penalaranMundur(userFacts);
 
     // console.log(resultRule);
 
     conTarget.innerHTML = "";
 
-    console.log(resultRule.desc);
+    // console.log(resultRule.desc);
 
     switch (true) {
       case resultRule.desc === "hp-outdoor-midrange-ignore-battery":
