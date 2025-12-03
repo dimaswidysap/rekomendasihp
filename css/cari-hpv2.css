@@ -22,13 +22,14 @@ main {
   top: 0;
   right: 0;
   transform: translate(50%, -50%);
+  outline: 2px solid var(--accen);
+  border-radius: 50%;
 }
 .con-btn-close a {
   display: inline-flex;
   height: 100%;
   width: 100%;
   background-color: #333;
-  outline: 2px solid rgb(176, 176, 176);
   border-radius: 50%;
   justify-content: center;
   align-items: center;
@@ -55,11 +56,16 @@ main {
   position: relative;
   margin-top: 1rem;
   color: var(--accen);
+  padding: 0 0.5rem;
+  flex-direction: column;
+  align-items: center;
 }
 
 .container header h1 {
   position: relative;
   z-index: 2;
+  /* background-color: #4caf50; */
+  /* width: max-content; */
 }
 
 .container-penjelasan {
