@@ -175,7 +175,7 @@ function cardHasil(conTarget, data) {
           });
           break;
         case i === 5:
-          teks.textContent = `Speaker ${data.speaker}, Network ${data.network}`;
+          teks.textContent = `Speaker ${data.speaker}, Network ${data.network}, Battery ${data.battery}mAh`;
           Object.assign(conImg.style, {
             backgroundImage: "url(./asset/icon/.png)",
           });

@@ -9,21 +9,21 @@ import {
 
 //DATA PERTANYAAN
 const pertanyaanGrup1 = [
-  "Apakah anda mempunyai budget Tinggi (Rp 8jt++)?",
-  "Apakah anda mempunyai budget Menengah (Rp 5jt - 8jt)?",
-  "Apakah anda mempunyai budget Rendah (Dibawah Rp 5jt)?",
+  "Apakah anda mempunyai budget Tinggi diatas 8 juta keatas?",
+  "Apakah anda mempunyai budget diatas 5 juta dan dibawah 8juta?",
+  "Apakah anda mempunyai budget dibawah 5 juta?",
 ];
 
 const pertanyaanGrup2 = [
-  "Apakah pioritas anda Gaming / Performa Tinggi/ Edit video",
-  "Apakah pioritas anda Kamera / Fotografi",
-  "Apakah pioritas anda Bisnis / Produktivitas / multitasking",
-  "Apakah pioritas anda Keperluan kerja di lapangan (seperti ojek online)",
+  "Apakah Anda membutuhkan smartphone dengan fokus pada gaming, performa tinggi, atau pengeditan video?",
+  "Apakah kebutuhan utama Anda berfokus pada kamera dan kemampuan fotografi?",
+  "Apakah kebutuhan utama Anda berfokus pada bisnis, produktivitas, dan kemampuan multitasking?",
+  "Apakah kebutuhan utama Anda berfokus pada aktivitas kerja di lapangan, seperti ojek online?",
 ];
 
 const pertanyaanGrup3 = [
-  "Apakah anda ingin baterai besar ? Di atas 5000mAh",
-  "Apakan anda tidak peduli dengan ketahanan baterai",
+  "Apakah kebutuhan Anda mencakup smartphone dengan daya tahan baterai besar, yaitu di atas 5000 mAh?",
+  "Apakah ketahanan baterai bukan menjadi prioritas utama bagi Anda?",
 ];
 
 //
@@ -129,15 +129,15 @@ function jawab(isIya) {
       jawaban1 = arrayAktif[indexSaatIni];
 
       switch (true) {
-        case jawaban1 === "Apakah anda mempunyai budget Tinggi (Rp 8jt++)?":
+        case jawaban1 ===
+          "Apakah anda mempunyai budget Tinggi diatas 8 juta keatas?":
           jawaban1 = "tinggi";
           break;
         case jawaban1 ===
-          "Apakah anda mempunyai budget Menengah (Rp 5jt - 8jt)?":
+          "Apakah anda mempunyai budget diatas 5 juta dan dibawah 8juta?":
           jawaban1 = "menengah";
           break;
-        case jawaban1 ===
-          "Apakah anda mempunyai budget Rendah (Dibawah Rp 5jt)?":
+        case jawaban1 === "Apakah anda mempunyai budget dibawah 5 juta?":
           jawaban1 = "rendah";
           break;
       }
@@ -151,18 +151,19 @@ function jawab(isIya) {
 
       switch (true) {
         case jawaban2 ===
-          "Apakah pioritas anda Gaming / Performa Tinggi/ Edit video":
+          "Apakah Anda membutuhkan smartphone dengan fokus pada gaming, performa tinggi, atau pengeditan video?":
           jawaban2 = "game";
           break;
-        case jawaban2 === "Apakah pioritas anda Kamera / Fotografi":
+        case jawaban2 ===
+          "Apakah kebutuhan utama Anda berfokus pada kamera dan kemampuan fotografi?":
           jawaban2 = "foto";
           break;
         case jawaban2 ===
-          "Apakah pioritas anda Bisnis / Produktivitas / multitasking":
+          "Apakah kebutuhan utama Anda berfokus pada bisnis, produktivitas, dan kemampuan multitasking?":
           jawaban2 = "bisnis";
           break;
         case jawaban2 ===
-          "Apakah pioritas anda Keperluan kerja di lapangan (seperti ojek online)":
+          "Apakah kebutuhan utama Anda berfokus pada aktivitas kerja di lapangan, seperti ojek online?":
           jawaban2 = "outdoor";
           break;
       }
@@ -174,7 +175,10 @@ function jawab(isIya) {
     } else if (fase === 3) {
       jawaban3 = arrayAktif[indexSaatIni];
 
-      if (jawaban3 === "Apakah anda ingin baterai besar ? Di atas 5000mAh") {
+      if (
+        jawaban3 ===
+        "Apakah kebutuhan Anda mencakup smartphone dengan daya tahan baterai besar, yaitu di atas 5000 mAh?"
+      ) {
         jawaban3 = "ya";
       } else {
         jawaban3 = "tidak";
