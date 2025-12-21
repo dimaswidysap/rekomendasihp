@@ -26,17 +26,13 @@ const pertanyaanGrup3 = [
   "Apakah ketahanan baterai bukan menjadi prioritas utama bagi Anda?",
 ];
 
-//
-
-// 2. STATE VARIABLES
 let fase = 1;
 let indexSaatIni = 0;
 
-let jawaban1 = ""; // Hasil Grup 1
-let jawaban2 = ""; // Hasil Grup 2
-let jawaban3 = ""; // Hasil Grup 3 (Baru)
+let jawaban1 = "";
+let jawaban2 = "";
+let jawaban3 = "";
 
-// Elemen HTML
 const textPertanyaan = document.getElementById("question-text");
 const textJudulFase = document.getElementById("phase-title");
 const boxKuis = document.getElementById("quiz-box");
