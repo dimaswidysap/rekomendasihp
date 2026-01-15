@@ -194,12 +194,6 @@ function tampilkanHasilAkhir() {
   boxKuis.style.display = "none";
   boxHasil.style.display = "block";
 
-  // containerHasil.innerHTML = `
-  //     <div class="final-item"><strong>Dana:</strong> ${jawaban1}</div>
-  //     <div class="final-item"><strong>Kebutuhan:</strong> ${jawaban2}</div>
-  //     <div class="final-item"><strong>Baterai awet:</strong> ${jawaban3}</div>
-  // `;
-
   containerHasil.innerHTML = `<section class="hbjhk">
   <div><p>Dana : <p/><strong>${jawaban1}</strong></div>
   <span>|</span>
