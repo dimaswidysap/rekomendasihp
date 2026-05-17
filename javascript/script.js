@@ -325,13 +325,13 @@ document
         const hpGamingEntryLevelIgnoreBattery = data.filter((hp) => {
           const isPriceOk = hp.price <= 5000000;
           const isChipsetOk = prosesorGaming.some((items) =>
-            hp.chipset.includes(items)
+            hp.chipset.includes(items),
           );
           return isPriceOk && isChipsetOk;
         });
 
         hpGamingEntryLevelIgnoreBattery.forEach((el) =>
-          cardHasil(conTarget, el)
+          cardHasil(conTarget, el),
         );
         break;
       case resultRule.desc === "gaming-entrylevel":
@@ -343,7 +343,7 @@ document
         const hpGamingEntryLevel = data.filter((hp) => {
           const isPriceOk = hp.price <= 5000000;
           const isChipsetOk = prosesorGaming.some((items) =>
-            hp.chipset.includes(items)
+            hp.chipset.includes(items),
           );
           return isPriceOk && isChipsetOk;
         });
@@ -359,7 +359,7 @@ document
         const hpGamingMidrange = data.filter((hp) => {
           const isPriceOk = hp.price >= 5000000 && hp.price <= 8000000;
           const isChipsetOk = prosesorGaming.some((items) =>
-            hp.chipset.includes(items)
+            hp.chipset.includes(items),
           );
           return isPriceOk && isChipsetOk;
         });
@@ -376,13 +376,13 @@ document
         const hpGamingMidrangeIgnoreBattery = data.filter((hp) => {
           const isPriceOk = hp.price >= 5000000 && hp.price <= 8000000;
           const isChipsetOk = prosesorGaming.some((items) =>
-            hp.chipset.includes(items)
+            hp.chipset.includes(items),
           );
           return isPriceOk && isChipsetOk;
         });
 
         hpGamingMidrangeIgnoreBattery.forEach((items) =>
-          cardHasil(conTarget, items)
+          cardHasil(conTarget, items),
         );
 
         break;
@@ -394,7 +394,7 @@ document
         }
         const flagshipGaming = data.filter((hp) => {
           const isChipsetOk = prosesorGaming.some((items) =>
-            hp.chipset.includes(items)
+            hp.chipset.includes(items),
           );
           const isPiceOK = hp.price >= 8000000;
           const isBatteryOk = hp.battery >= 5000;
@@ -412,14 +412,14 @@ document
         }
         const flagshipGamingIgnoreBattery = data.filter((hp) => {
           const isChipsetOk = prosesorGaming.some((items) =>
-            hp.chipset.includes(items)
+            hp.chipset.includes(items),
           );
           const isPiceOK = hp.price >= 8000000;
 
           return isChipsetOk && isPiceOK;
         });
         flagshipGamingIgnoreBattery.forEach((data) =>
-          cardHasil(conTarget, data)
+          cardHasil(conTarget, data),
         );
 
         console.log(flagshipGamingIgnoreBattery);
