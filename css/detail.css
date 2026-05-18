@@ -1,0 +1,344 @@
+/* ─── Page shell — fixed, full viewport ─── */
+.detail-page {
+  position: fixed;
+  z-index: 100;
+  inset: 0;
+  width: 100%;
+  height: 100vh;
+  background: var(--bg);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  /* Grain overlay */
+  /* background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E"); */
+  background-color: var(--bg);
+}
+
+/* Grain opacity via pseudo */
+.detail-page::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: inherit;
+  background-image: inherit;
+  opacity: 0.04;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ─── Top bar ─── */
+.detail-topbar {
+  position: relative;
+  z-index: 2;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  padding: 1.1rem clamp(1.5rem, 4vw, 3rem);
+  border-bottom: 1px solid var(--border);
+}
+
+.detail-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  color: var(--cream-dim);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: color 0.2s ease;
+}
+
+.detail-back:hover {
+  color: var(--accent);
+}
+
+.detail-back svg {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+}
+
+.detail-topbar-label {
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(243, 244, 244, 0.2);
+  margin-left: auto;
+}
+
+/* ─── Body — 2 kolom, sisa tinggi ─── */
+.detail-body {
+  position: relative;
+  z-index: 1;
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr 1.25fr;
+  overflow: hidden;
+}
+
+/* ════════════════════════════
+   KIRI — foto
+════════════════════════════ */
+.detail-left {
+  border-right: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(2rem, 5vh, 4rem) 2.5rem;
+  gap: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Navy glow belakang foto */
+.detail-left::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse 70% 65% at 50% 65%,
+    rgba(0, 48, 73, 0.4),
+    transparent 70%
+  );
+  pointer-events: none;
+}
+
+/* Dot grid dekorasi */
+.detail-left::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(
+    circle,
+    rgba(243, 244, 244, 0.05) 1px,
+    transparent 1px
+  );
+  background-size: 28px 28px;
+  mask-image: radial-gradient(
+    ellipse 80% 80% at 50% 50%,
+    black 0%,
+    transparent 100%
+  );
+  -webkit-mask-image: radial-gradient(
+    ellipse 80% 80% at 50% 50%,
+    black 0%,
+    transparent 100%
+  );
+  pointer-events: none;
+}
+
+.detail-photo-wrap {
+  position: relative;
+  z-index: 1;
+}
+
+.detail-photo-frame {
+  width: clamp(130px, 16vw, 200px);
+  aspect-ratio: 9 / 16;
+  background: var(--surface);
+  border: 1px solid var(--border-md);
+  border-radius: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Accent line bawah frame */
+.detail-photo-frame::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 20%;
+  right: 20%;
+  height: 1px;
+  background: rgba(42, 157, 143, 0.4);
+}
+
+.detail-photo-frame img {
+  width: 85%;
+  height: 85%;
+  object-fit: contain;
+}
+
+.detail-photo-placeholder {
+  font-size: 0.62rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(243, 244, 244, 0.14);
+  text-align: center;
+  line-height: 1.8;
+}
+
+/* Tags / chip OS dll */
+.detail-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+}
+
+.detail-tag {
+  font-size: 0.68rem;
+  letter-spacing: 0.06em;
+  padding: 0.28rem 0.7rem;
+  border-radius: 100px;
+  border: 1px solid var(--border-md);
+  color: var(--cream-dim);
+  background: var(--cream-faint);
+}
+
+/* ════════════════════════════
+   KANAN — info scrollable
+════════════════════════════ */
+.detail-right {
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: clamp(1.5rem, 4vh, 3rem) clamp(1.5rem, 4vw, 3rem);
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+
+  scrollbar-width: thin;
+  scrollbar-color: rgba(42, 157, 143, 0.25) transparent;
+}
+
+.detail-right::-webkit-scrollbar {
+  width: 3px;
+}
+.detail-right::-webkit-scrollbar-track {
+  background: transparent;
+}
+.detail-right::-webkit-scrollbar-thumb {
+  background: rgba(42, 157, 143, 0.25);
+  border-radius: 100px;
+}
+
+/* ── Identitas ── */
+.detail-rank {
+  font-size: 0.65rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+}
+
+.detail-name {
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 3.5vw, 2.6rem);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--cream);
+}
+
+.detail-name em {
+  font-style: italic;
+  color: var(--accent);
+}
+
+.detail-harga {
+  font-size: 0.78rem;
+  color: var(--cream-dim);
+  margin-top: 0.6rem;
+}
+
+.detail-harga strong {
+  display: block;
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: var(--gold);
+  margin-top: 0.2rem;
+}
+
+/* ── Divider ── */
+.detail-divider {
+  border: none;
+  border-top: 1px solid var(--border);
+  flex-shrink: 0;
+}
+
+/* ── Section label ── */
+.detail-section-label {
+  font-size: 0.62rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(243, 244, 244, 0.28);
+  margin-bottom: 1rem;
+}
+
+/* ── Specs grid ── */
+.detail-specs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.6rem;
+}
+
+.spec-item {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.7rem 0.9rem;
+  transition: border-color 0.2s ease;
+}
+
+.spec-item:hover {
+  border-color: rgba(42, 157, 143, 0.25);
+}
+
+.spec-label {
+  font-size: 0.62rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(243, 244, 244, 0.28);
+  margin-bottom: 0.3rem;
+}
+
+.spec-value {
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: var(--cream);
+}
+
+/* ─── Responsive ─── */
+@media (max-width: 720px) {
+  .detail-body {
+    grid-template-columns: 1fr;
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+
+  .detail-left {
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+    padding: 2.5rem 1.5rem 2rem;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 1.5rem;
+  }
+
+  .detail-left::before {
+    display: none;
+  }
+
+  .detail-photo-frame {
+    width: 90px;
+    flex-shrink: 0;
+  }
+
+  .detail-tags {
+    justify-content: flex-start;
+  }
+
+  .detail-right {
+    overflow-y: unset;
+  }
+}

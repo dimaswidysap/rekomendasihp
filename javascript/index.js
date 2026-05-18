@@ -10,8 +10,6 @@ function kapitalAwal(text) {
 }
 const containerResult = document.querySelector(".container-result");
 
-console.log(data);
-
 const dataHpDisplay = ["samsung s24 ultra", "vivo v40 5g", "poco x6 pro 5g"];
 
 const dataFilter = data.filter((item) => dataHpDisplay.includes(item.name));
@@ -55,8 +53,6 @@ dataFilter.forEach((item, index) => {
   // item.name
   // item.harga
 
-  console.log(containerCard);
-
   containerCard.addEventListener("mouseenter", () => {
     containerCard.style.zIndex = "2";
   });
@@ -64,3 +60,56 @@ dataFilter.forEach((item, index) => {
     containerCard.style.zIndex = "1";
   });
 });
+
+const containerList = document.querySelector(".container-list");
+
+data.forEach((item, index) => {
+  const container = document.createElement("div");
+  container.classList.add("list-hp");
+
+  const span1 = document.createElement("span");
+  container.append(span1);
+  span1.classList.add("merk-hp");
+  span1.textContent = kapitalAwal(item.name);
+
+  const span2 = document.createElement("span");
+  container.append(span2);
+  span2.textContent = "Lihat Detail";
+
+  containerList.append(container);
+});
+
+const merkHp = document.querySelectorAll(".merk-hp");
+
+// console.log(merkHp);
+
+const inputForm = document.getElementById("input-hp");
+containerList.classList.add("displayNone");
+
+inputForm.addEventListener("input", () => {
+  const value = inputForm.value.trim();
+
+  if (value !== "") {
+    containerList.classList.remove("displayNone");
+    containerDisplay.style.display = "none";
+  } else {
+    containerList.classList.add("displayNone");
+    containerDisplay.style.display = "flex";
+  }
+});
+
+(function cariHp() {
+  const input = document.getElementById("input-hp");
+  const rows = document.querySelectorAll(".list-hp");
+  if (!input) return;
+  input.addEventListener("input", function () {
+    // console.log(inputIsi);
+
+    // displayHuruf.textContent = inputIsi;
+    const q = this.value.toLowerCase().trim();
+    rows.forEach((row) => {
+      const text = row.innerText.toLowerCase();
+      row.style.display = !q || text.includes(q) ? "" : "none";
+    });
+  });
+})();
