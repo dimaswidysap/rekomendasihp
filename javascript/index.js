@@ -1,4 +1,5 @@
 import { data } from "../module/dataset/dataset.mjs";
+import detailPhone from "./detail-phone.js";
 
 function kapitalAwal(text) {
   return text
@@ -62,25 +63,45 @@ dataFilter.forEach((item, index) => {
 });
 
 const containerList = document.querySelector(".container-list");
+const containerDetailHp = document.querySelector(".detail-page");
 
 data.forEach((item, index) => {
   const container = document.createElement("div");
   container.classList.add("list-hp");
 
+  // ── kiri: nomor + nama ──
+  const left = document.createElement("div");
+  left.classList.add("list-hp-left");
+
+  const num = document.createElement("span");
+  num.classList.add("list-hp-num");
+  num.textContent = String(index + 1).padStart(2, "0");
+
   const span1 = document.createElement("span");
-  container.append(span1);
   span1.classList.add("merk-hp");
   span1.textContent = kapitalAwal(item.name);
 
-  const span2 = document.createElement("span");
-  container.append(span2);
-  span2.textContent = "Lihat Detail";
+  left.append(num, span1);
 
+  // ── kanan: lihat detail + ikon ──
+  const span2 = document.createElement("span");
+  span2.innerHTML = `Lihat Detail <svg viewBox="0 0 16 16" fill="none">
+    <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>`;
+
+  span2.addEventListener("click", () => {
+    containerDetailHp.classList.remove("displayNone");
+    detailPhone(index, data);
+  });
+
+  container.append(left, span2);
   containerList.append(container);
 });
 
 const merkHp = document.querySelectorAll(".merk-hp");
 
+containerDetailHp.classList.add("displayNone");
 // console.log(merkHp);
 
 const inputForm = document.getElementById("input-hp");

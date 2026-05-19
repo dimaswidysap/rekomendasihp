@@ -590,29 +590,92 @@ button {
 .container-list::-webkit-scrollbar {
   display: none;
 }
-
-.list-hp {
-  width: 100%;
-  border-radius: 5px;
-  border: 2px solid var(--border);
-  background-color: var(--navy);
-
-  display: flex;
-  justify-content: space-between;
-}
-
 .displayNone {
   display: none !important;
 }
-.list-hp span {
+
+/* ═══════════════════════════════════════════
+   list-hp.css
+   List Smartphone — selaras tema dark elegant
+   ═══════════════════════════════════════════ */
+
+.list-hp {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid rgba(243, 244, 244, 0.07);
+  transition: background 0.18s ease;
+  cursor: default;
+}
+
+/* border atas hanya untuk item pertama */
+.list-hp:first-child {
+  border-top: 1px solid rgba(243, 244, 244, 0.07);
+}
+
+.list-hp:hover {
+  background: rgba(243, 244, 244, 0.04);
+}
+
+/* ── Sisi kiri: nomor + nama ── */
+.list-hp-left {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+}
+
+/* nomor urut — tambahkan via JS jika mau */
+.list-hp-num {
+  font-family: "DM Sans", system-ui, sans-serif;
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  color: rgba(42, 157, 143, 0.6);
+  width: 1.5rem;
+  flex-shrink: 0;
+}
+
+/* nama HP */
+.merk-hp {
+  font-family: "DM Sans", system-ui, sans-serif;
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: #f3f4f4;
+  line-height: 1.4;
+}
+
+/* ── Sisi kanan: "Lihat Detail" ── */
+.list-hp span:last-child {
+  font-family: "DM Sans", system-ui, sans-serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.06em;
+  color: rgba(243, 244, 244, 0.38);
+  cursor: pointer;
   display: inline-flex;
-  padding: 0.5rem 2rem;
+  align-items: center;
+  gap: 0.35rem;
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: color 0.18s ease;
+  user-select: none;
 }
 
-.list-hp span:nth-child(2) {
-  font-weight: 700;
+.list-hp span:last-child:hover {
+  color: #2a9d8f;
 }
 
+/* ── Ikon panah di span "Lihat Detail" ── */
+.list-hp span:last-child svg {
+  width: 12px;
+  height: 12px;
+  flex-shrink: 0;
+  transition: transform 0.18s ease;
+}
+
+.list-hp span:last-child:hover svg {
+  transform: translateX(2px);
+}
 /* ══════════════════════════════════════════
    FOOTER
 ══════════════════════════════════════════ */

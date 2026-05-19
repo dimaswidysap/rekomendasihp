@@ -17,6 +17,9 @@ const data = [
     frontCam: 50,
     backCam: 200,
     foto: "samsungs25.png",
+    operatingSystem: "android 14",
+    ip68: true,
+    ukuranLayar: 6.8,
   },
   {
     name: "iphone 15 pro",
@@ -36,6 +39,9 @@ const data = [
     frontCam: 12,
     backCam: 48, // Kamera utama (Wide)
     foto: "iphone15pro.png",
+    operatingSystem: "ios 17",
+    ip68: true,
+    ukuranLayar: 6.1,
   },
   {
     name: "oppo find x8 pro",
@@ -54,6 +60,9 @@ const data = [
     frontCam: 32,
     backCam: 50, // Kamera utama (Wide)
     foto: "oppofindx8pro.png",
+    operatingSystem: "android 15",
+    ip68: true,
+    ukuranLayar: 6.82,
   },
   {
     name: "vivo x100 pro",
@@ -72,6 +81,9 @@ const data = [
     frontCam: 32,
     backCam: 50, // Kamera utama (Wide)
     foto: "vivox100pro.png",
+    operatingSystem: "android 14",
+    ip68: true,
+    ukuranLayar: 6.78,
   },
   {
     name: "huawei pura 70 ultra",
@@ -90,6 +102,9 @@ const data = [
     frontCam: 13,
     backCam: 50, // Kamera utama (Wide, 1-inch sensor, Retractable lens)
     foto: "huawei_pura70ultra.png",
+    operatingSystem: "harmony os 4",
+    ip68: true,
+    ukuranLayar: 6.8,
   },
   {
     name: "oppo find x8",
@@ -108,6 +123,9 @@ const data = [
     frontCam: 32, // Kamera depan
     backCam: 50, // Kamera utama (Triple 50MP, Wide, Ultrawide, Periscope Telephoto 3x optical zoom)
     foto: "oppo_findx8.png",
+    operatingSystem: "android 15",
+    ip68: true,
+    ukuranLayar: 6.59,
   },
   {
     name: "asus zenfone 11 ultra",
@@ -127,6 +145,9 @@ const data = [
     frontCam: 32, // Kamera depan (output 8MP setelah pixel binning)
     backCam: 50, // Kamera utama (50MP Gimbal OIS, 13MP Ultrawide, 32MP Telephoto 3x optical zoom)
     foto: "asus_zenfone11ultra.png",
+    operatingSystem: "android 14",
+    ip68: true,
+    ukuranLayar: 6.78,
   },
   {
     name: "xiaomi 14t pro",
@@ -145,6 +166,9 @@ const data = [
     frontCam: 32, // Kamera depan
     backCam: 50, // Kamera utama (50MP Leica OIS Wide, 12MP Ultrawide, 50MP Leica Telephoto 2.6x optical zoom)
     foto: "xiaomi_14t_pro.png",
+    operatingSystem: "android 14",
+    ip68: true,
+    ukuranLayar: 6.67,
   },
   {
     name: "vivo v40 5g",
@@ -163,6 +187,9 @@ const data = [
     frontCam: 50, // Kamera depan (50MP ZEISS Group Selfie Camera dengan AF)
     backCam: 50, // Kamera utama (Dual 50MP ZEISS, Main OIS + Ultra Wide AF, Aura Light)
     foto: "vivo_v40_5g.png",
+    operatingSystem: "android 14",
+    ip68: true,
+    ukuranLayar: 6.78,
   },
   {
     name: "xiaomi 14t 5g",
@@ -180,6 +207,9 @@ const data = [
     frontCam: 32, // Kamera depan
     backCam: 50, // Kamera utama (Triple 50MP Leica OIS Wide + 50MP Telephoto 2x + 12MP Ultrawide)
     foto: "xiaomi_14t_5g.png",
+    operatingSystem: "android 14",
+    ip68: false,
+    ukuranLayar: 6.67,
   },
   {
     name: "poco x6 pro 5g",
@@ -197,6 +227,9 @@ const data = [
     frontCam: 16, // Kamera depan
     backCam: 64, // Kamera utama (Triple 64MP OIS Wide + 8MP Ultrawide + 2MP Macro)
     foto: "poco_x6_pro_5g.png",
+    operatingSystem: "android 14",
+    ip68: false,
+    ukuranLayar: 6.67,
   },
   {
     name: "redmi note 13 pro 5g",
@@ -214,6 +247,9 @@ const data = [
     frontCam: 16, // Kamera depan
     backCam: 200, // Kamera utama (Triple 200MP OIS Wide + 8MP Ultrawide + 2MP Macro)
     foto: "redmi_note_13_pro_5g.png",
+    operatingSystem: "android 14",
+    ip68: true,
+    ukuranLayar: 6.67,
   },
   {
     name: "infinix note 40 4g",
@@ -231,6 +267,9 @@ const data = [
     frontCam: 32, // Kamera depan
     backCam: 108, // Kamera utama (Triple 108MP Wide, 3X Lossless Superzoom)
     foto: "infinix_note_40_4g.png",
+    operatingSystem: "android 14",
+    ip68: false,
+    ukuranLayar: 6.78,
   },
   {
     name: "infinix hot 50 4g",
@@ -248,6 +287,9 @@ const data = [
     frontCam: 8, // Kamera depan
     backCam: 50, // Kamera utama (Dual 50MP Wide + AI/Macro)
     foto: "infinix_hot_50_4g.png",
+    operatingSystem: "android 14",
+    ip68: false,
+    ukuranLayar: 6.78,
   },
 
   {
@@ -266,6 +308,9 @@ const data = [
     frontCam: 13, // Kamera depan
     backCam: 50, // Kamera utama (Dual 50MP Wide + Lensa Bantu)
     foto: "redmi_14c.png",
+    operatingSystem: "android 14",
+    ip68: false,
+    ukuranLayar: 6.88,
   },
 
   // MIDRANGE

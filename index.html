@@ -203,17 +203,16 @@
           <div class="detail-photo-wrap">
             <div class="detail-photo-frame">
               <!-- Ganti <img> src dengan item.foto -->
-              <span class="detail-photo-placeholder">foto<br />smartphone</span>
-              <!-- <img src="" alt="" /> -->
+              <img id="foto-hp" alt="foto-hp" />
             </div>
           </div>
 
           <div class="detail-tags">
             <!-- Isi dinamis dari JS -->
-            <span class="detail-tag">Android 14</span>
-            <span class="detail-tag">5G</span>
-            <span class="detail-tag">IP68</span>
-            <span class="detail-tag">120Hz</span>
+            <span class="detail-tag android-hp"></span>
+            <span class="detail-tag jaringan-hp"></span>
+            <span class="detail-tag ip-68"></span>
+            <!-- <span class="detail-tag">120Hz</span> -->
           </div>
         </aside>
 
@@ -221,15 +220,13 @@
         <main class="detail-right">
           <!-- Identitas -->
           <div class="detail-identity">
-            <p class="detail-rank">/ Rekomendasi #1</p>
             <h1 class="detail-name">
               <!-- item.name — pisahkan kata terakhir ke <em> untuk efek italic -->
-              Google <em>Pixel 8a</em>
             </h1>
             <div class="detail-harga">
               Mulai dari
               <!-- item.harga -->
-              <strong>Rp 7.499.000</strong>
+              <strong class="harga-hp"></strong>
             </div>
           </div>
 
@@ -241,32 +238,35 @@
             <div class="detail-specs">
               <div class="spec-item">
                 <p class="spec-label">Prosesor</p>
-                <p class="spec-value">Tensor G3</p>
+                <p class="spec-value prossesor-hp"></p>
               </div>
               <div class="spec-item">
                 <p class="spec-label">RAM</p>
-                <p class="spec-value">8 GB</p>
+                <p class="spec-value ram-hp"></p>
               </div>
               <div class="spec-item">
                 <p class="spec-label">Penyimpanan</p>
-                <p class="spec-value">128 / 256 GB</p>
+                <p class="spec-value penyimpanan-hp"></p>
               </div>
               <div class="spec-item">
                 <p class="spec-label">Kamera Utama</p>
-                <p class="spec-value">64 MP</p>
+                <p class="spec-value kamera-hp"></p>
               </div>
               <div class="spec-item">
                 <p class="spec-label">Baterai</p>
-                <p class="spec-value">4.492 mAh</p>
+                <p class="spec-value baterai-hp"></p>
               </div>
               <div class="spec-item">
                 <p class="spec-label">Layar</p>
-                <p class="spec-value">6.1" OLED</p>
+                <p class="spec-value layar-hp"></p>
               </div>
             </div>
           </section>
         </main>
       </div>
     </div>
+
+    <script type="module" src="javascript/index.js"></script>
+    <script type="module" src="javascript/detail-phone.js"></script>
   </body>
 </html>
