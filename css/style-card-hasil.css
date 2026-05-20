@@ -1,9 +1,0 @@
-@media (max-width: 640px) {
-  .dcfgtds {
-    flex-direction: column;
-    /* background-color: aqua; */
-  }
-  .dcfgtds section {
-    width: 100% !important;
-  }
-}

@@ -1,112 +1,292 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="id">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cari HP</title>
-    <link rel="stylesheet" href="css/cari-hpv2.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="css/reset.css" />
-    <link rel="stylesheet" href="./css/style-card-hasil.css" />
-    <link rel="stylesheet" href="css/button.css" />
-    <link rel="stylesheet" href="css/universal.css" />
+    <link rel="stylesheet" href="css/page-two.css" />
   </head>
   <body>
     <main>
+      <!-- ─── HALAMAN QUIZ ─── -->
       <section class="container">
-        <section class="con-btn-close">
-          <a id="btn-close-carihp" href="index.html"></a>
-        </section>
-        <header>
-          <h1>🔍 Sistem Rekomendasi Smartphone</h1>
-          <h2>Harap dibaca terlebih dahulu !</h2>
-        </header>
-
-        <div class="container-penjelasan">
-          <div class="card-penjelasan">
-            <span></span>
-            <p>
-              Untuk Gaming / Performa Tinggi/ Edit video sudah termasuk ram
-              besar, penyimpanan besar, layar amoled, chipset kencang.
-            </p>
-          </div>
-          <div class="card-penjelasan">
-            <span></span>
-            <p>
-              Untuk Bisnis / Produktivitas / multitasking termasuk ram besar,
-              penyimpanan besar,kamera bagus dan chipset kencang untuk
-              multitasking.
-            </p>
-          </div>
-          <div class="card-penjelasan">
-            <span></span>
-            <p>
-              Untuk Kamera / Fotografi termasuk kamera bagus dikelas harganya,
-              dan penyimpanan besar.
-            </p>
-          </div>
-          <div class="card-penjelasan">
-            <span></span>
-            <p>
-              Untuk kerja di lapangan (seperti ojek online) kami menyarankan hp
-              dengan layar ips, karena untuk aktivitas diluar ruangan layar ips
-              sangan cocok daripada layar amolde
-            </p>
-          </div>
+        <!-- Topbar -->
+        <div class="pt-topbar">
+          <a id="btn-close-carihp" href="index.html" class="pt-back">
+            <svg
+              width="14"
+              height="14"
+              viewBox="0 0 16 16"
+              fill="none"
+              aria-hidden="true"
+            >
+              <path
+                d="M10 3L5 8l5 5"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+            Kembali
+          </a>
+          <span class="pt-topbar-label">Sistem Rekomendasi Smartphone</span>
         </div>
 
-        <div class="container-quiz">
-          <div id="quiz-box">
-            <h3 id="phase-title">Pertanyaan Golongan 1:</h3>
-            <h2 id="question-text">Memuat...</h2>
+        <!-- Main content -->
+        <div class="pt-main">
+          <!-- Header -->
+          <header class="pt-header">
+            <div class="pt-badge">
+              <span class="pt-badge-dot"></span>
+              Sistem Rekomendasi
+            </div>
+            <h1>Temukan HP yang<br /><em>Tepat Untukmu</em></h1>
+            <p>Harap baca panduan berikut sebelum memulai</p>
+          </header>
 
-            <div class="btn-group">
-              <button id="btn-yes" class="btn-yes btn-pilihan">
-                <span></span>
-                <p>iya</p>
-              </button>
-              <button id="btn-no" class="btn-no btn-pilihan">
-                <span></span>
-                <p>tidak</p>
-              </button>
+          <!-- Panduan / Penjelasan -->
+          <div class="container-penjelasan">
+            <div class="card-penjelasan">
+              <div class="card-p-icon">
+                <!-- Gaming icon -->
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
+                </svg>
+              </div>
+              <p>
+                Gaming / Performa Tinggi / Edit video — sudah termasuk RAM
+                besar, penyimpanan besar, layar AMOLED, chipset kencang.
+              </p>
+            </div>
+
+            <div class="card-penjelasan">
+              <div class="card-p-icon">
+                <!-- Produktivitas icon -->
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <rect x="2" y="3" width="20" height="14" rx="2" />
+                  <path d="M8 21h8M12 17v4" />
+                </svg>
+              </div>
+              <p>
+                Bisnis / Produktivitas / Multitasking — termasuk RAM besar,
+                penyimpanan besar, kamera bagus, chipset kencang untuk
+                multitasking.
+              </p>
+            </div>
+
+            <div class="card-penjelasan">
+              <div class="card-p-icon">
+                <!-- Kamera icon -->
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M23 19a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2h4l2-3h6l2 3h4a2 2 0 012 2z"
+                  />
+                  <circle cx="12" cy="13" r="4" />
+                </svg>
+              </div>
+              <p>
+                Kamera / Fotografi — termasuk kamera terbaik di kelasnya dan
+                penyimpanan besar.
+              </p>
+            </div>
+
+            <div class="card-penjelasan">
+              <div class="card-p-icon">
+                <!-- Outdoor / lapangan icon -->
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M12 2a7 7 0 017 7c0 4.5-7 13-7 13S5 13.5 5 9a7 7 0 017-7z"
+                  />
+                  <circle cx="12" cy="9" r="2.5" />
+                </svg>
+              </div>
+              <p>
+                Kerja di lapangan (ojek online dll.) — kami sarankan layar IPS,
+                lebih cocok untuk aktivitas di luar ruangan dibanding AMOLED.
+              </p>
             </div>
           </div>
 
-          <div id="result-area">
-            <h2 class="success-text">Selesai!</h2>
-            <p>Ringkasan</p>
+          <!-- Quiz -->
+          <div class="container-quiz">
+            <div id="quiz-box" class="quiz-box">
+              <p class="quiz-phase-label" id="phase-title">Pertanyaan Budget</p>
+              <h2 id="question-text" class="quiz-question">Memuat...</h2>
+              <div class="btn-group">
+                <button id="btn-yes" class="btn-pilihan btn-yes">
+                  <svg
+                    width="15"
+                    height="15"
+                    viewBox="0 0 16 16"
+                    fill="none"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M3 8l4 4 6-6"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                  Ya
+                </button>
+                <button id="btn-no" class="btn-pilihan btn-no">
+                  <svg
+                    width="15"
+                    height="15"
+                    viewBox="0 0 16 16"
+                    fill="none"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M4 4l8 8M12 4l-8 8"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                  Tidak
+                </button>
+              </div>
+            </div>
 
-            <div id="final-result-container"></div>
-
-            <section class="container-btn">
-              <button id="cari-rekomendasi" class="main-btn">
-                Cari Rekomendasi
-              </button>
-              <button onclick="location.reload()" class="main-btn btn-reload">
-                Ulangi
-              </button>
-            </section>
+            <div id="result-area" class="result-area" style="display: none">
+              <div class="result-header">
+                <svg
+                  width="28"
+                  height="28"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M22 11.08V12a10 10 0 11-5.93-9.14"
+                    stroke="var(--accent)"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                  />
+                  <path
+                    d="M22 4L12 14.01l-3-3"
+                    stroke="var(--accent)"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+                <h2>Selesai!</h2>
+              </div>
+              <p class="result-sub">Ringkasan preferensimu</p>
+              <div id="final-result-container"></div>
+              <section class="container-btn">
+                <button
+                  id="cari-rekomendasi"
+                  class="main-btn main-btn--primary"
+                >
+                  <svg
+                    width="15"
+                    height="15"
+                    viewBox="0 0 16 16"
+                    fill="none"
+                    aria-hidden="true"
+                  >
+                    <circle
+                      cx="7"
+                      cy="7"
+                      r="4.5"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                    />
+                    <path
+                      d="M10.5 10.5L13 13"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                    />
+                  </svg>
+                  Cari Rekomendasi
+                </button>
+                <button
+                  onclick="location.reload()"
+                  class="main-btn main-btn--ghost"
+                >
+                  <svg
+                    width="15"
+                    height="15"
+                    viewBox="0 0 16 16"
+                    fill="none"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M2 8a6 6 0 016-6 6 6 0 014.5 2M14 8a6 6 0 01-6 6 6 6 0 01-4.5-2"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                    />
+                    <path
+                      d="M13 2.5V5.5H10"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                  Ulangi
+                </button>
+              </section>
+            </div>
           </div>
         </div>
       </section>
+
+      <!-- ─── HASIL ─── -->
       <section class="container-header"></section>
       <section class="container-hasil"></section>
-      <section class="csdeeds">
-        <div>
-          <button id="prev-btn">
-            <section class="fkaug"></section>
-            <section>Prev</section>
-          </button>
-          <button id="next-btn">
-            <section>Next</section>
-            <section class="fkaug"></section>
-          </button>
-        </div>
-      </section>
     </main>
 
     <script type="module" src="javascript/cari-hpv2.js"></script>
     <script type="module" src="javascript/cari-hp.js"></script>
     <script type="module" src="javascript/rekomendasi-switch.js"></script>
-    <!-- <script type="module" src="javascript/new-card.js"></script> -->
   </body>
 </html>
