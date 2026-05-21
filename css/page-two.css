@@ -153,6 +153,12 @@ body {
   transition: border-color 0.2s ease;
 }
 
+@media (max-width: 640px) {
+  .card-penjelasan {
+    flex-direction: column;
+  }
+}
+
 .card-penjelasan:hover {
   border-color: rgba(42, 157, 143, 0.28);
 }
