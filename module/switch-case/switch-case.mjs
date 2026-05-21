@@ -247,7 +247,7 @@ function switchCase(resultRule) {
       const hpGamingEntryLevelIgnoreBattery = data.filter((hp) => {
         const isPriceOk = hp.price <= 5000000;
         const isChipsetOk = prosesorGaming.some((items) =>
-          hp.chipset.includes(items)
+          hp.chipset.includes(items),
         );
         return isPriceOk && isChipsetOk;
       });
@@ -263,7 +263,7 @@ function switchCase(resultRule) {
       const hpGamingEntryLevel = data.filter((hp) => {
         const isPriceOk = hp.price <= 5000000;
         const isChipsetOk = prosesorGaming.some((items) =>
-          hp.chipset.includes(items)
+          hp.chipset.includes(items),
         );
         return isPriceOk && isChipsetOk;
       });
@@ -279,7 +279,7 @@ function switchCase(resultRule) {
       const hpGamingMidrange = data.filter((hp) => {
         const isPriceOk = hp.price >= 5000000 && hp.price <= 8000000;
         const isChipsetOk = prosesorGaming.some((items) =>
-          hp.chipset.includes(items)
+          hp.chipset.includes(items),
         );
         return isPriceOk && isChipsetOk;
       });
@@ -296,13 +296,13 @@ function switchCase(resultRule) {
       const hpGamingMidrangeIgnoreBattery = data.filter((hp) => {
         const isPriceOk = hp.price >= 5000000 && hp.price <= 8000000;
         const isChipsetOk = prosesorGaming.some((items) =>
-          hp.chipset.includes(items)
+          hp.chipset.includes(items),
         );
         return isPriceOk && isChipsetOk;
       });
 
       hpGamingMidrangeIgnoreBattery.forEach((items) =>
-        cardHasil(conTarget, items)
+        cardHasil(conTarget, items),
       );
 
       break;
@@ -314,7 +314,7 @@ function switchCase(resultRule) {
       }
       const flagshipGaming = data.filter((hp) => {
         const isChipsetOk = prosesorGaming.some((items) =>
-          hp.chipset.includes(items)
+          hp.chipset.includes(items),
         );
         const isPiceOK = hp.price >= 8000000;
         const isBatteryOk = hp.battery >= 5000;
@@ -332,7 +332,7 @@ function switchCase(resultRule) {
       }
       const flagshipGamingIgnoreBattery = data.filter((hp) => {
         const isChipsetOk = prosesorGaming.some((items) =>
-          hp.chipset.includes(items)
+          hp.chipset.includes(items),
         );
         const isPiceOK = hp.price >= 8000000;
 

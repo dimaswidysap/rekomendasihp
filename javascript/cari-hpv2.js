@@ -1,7 +1,7 @@
 import {
   rules,
   data,
-  cardHasil,
+  // cardHasil,
   createHeader,
   prosesorGaming,
   switchCase,

@@ -12,6 +12,7 @@
     />
     <link rel="stylesheet" href="css/reset.css" />
     <link rel="stylesheet" href="css/page-two.css" />
+    <link rel="stylesheet" href="css/detail.css" />
   </head>
   <body>
     <main>
@@ -283,10 +284,99 @@
       <!-- ─── HASIL ─── -->
       <section class="container-header"></section>
       <section class="container-hasil"></section>
+
+      <!-- detail page -->
+
+      <div class="detail-page">
+        <!-- TOP BAR -->
+        <header class="detail-topbar">
+          <button class="detail-back">
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+              <path
+                d="M10 3L5 8l5 5"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+            Kembali
+          </button>
+          <span class="detail-topbar-label">Detail Smartphone</span>
+        </header>
+
+        <!-- BODY: 2 kolom -->
+        <div class="detail-body">
+          <!-- KIRI — foto + chip -->
+          <aside class="detail-left">
+            <div class="detail-photo-wrap">
+              <div class="detail-photo-frame">
+                <!-- Ganti <img> src dengan item.foto -->
+                <img id="foto-hp" alt="foto-hp" />
+              </div>
+            </div>
+
+            <div class="detail-tags">
+              <!-- Isi dinamis dari JS -->
+              <span class="detail-tag android-hp"></span>
+              <span class="detail-tag jaringan-hp"></span>
+              <span class="detail-tag ip-68"></span>
+              <!-- <span class="detail-tag">120Hz</span> -->
+            </div>
+          </aside>
+
+          <!-- KANAN — info scrollable -->
+          <div class="detail-right">
+            <!-- Identitas -->
+            <div class="detail-identity">
+              <h1 class="detail-name">
+                <!-- item.name — pisahkan kata terakhir ke <em> untuk efek italic -->
+              </h1>
+              <div class="detail-harga">
+                Mulai dari
+                <!-- item.harga -->
+                <strong class="harga-hp"></strong>
+              </div>
+            </div>
+
+            <hr class="detail-divider" />
+
+            <!-- Spesifikasi grid -->
+            <section class="detail-section">
+              <p class="detail-section-label">Spesifikasi Utama</p>
+              <div class="detail-specs">
+                <div class="spec-item">
+                  <p class="spec-label">Prosesor</p>
+                  <p class="spec-value prossesor-hp"></p>
+                </div>
+                <div class="spec-item">
+                  <p class="spec-label">RAM</p>
+                  <p class="spec-value ram-hp"></p>
+                </div>
+                <div class="spec-item">
+                  <p class="spec-label">Penyimpanan</p>
+                  <p class="spec-value penyimpanan-hp"></p>
+                </div>
+                <div class="spec-item">
+                  <p class="spec-label">Kamera Utama</p>
+                  <p class="spec-value kamera-hp"></p>
+                </div>
+                <div class="spec-item">
+                  <p class="spec-label">Baterai</p>
+                  <p class="spec-value baterai-hp"></p>
+                </div>
+                <div class="spec-item">
+                  <p class="spec-label">Layar</p>
+                  <p class="spec-value layar-hp"></p>
+                </div>
+              </div>
+            </section>
+          </div>
+        </div>
+      </div>
     </main>
 
     <script type="module" src="javascript/cari-hpv2.js"></script>
     <script type="module" src="javascript/cari-hp.js"></script>
-    <script type="module" src="javascript/rekomendasi-switch.js"></script>
   </body>
 </html>
